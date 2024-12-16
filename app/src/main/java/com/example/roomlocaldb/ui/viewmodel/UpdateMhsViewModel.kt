@@ -13,6 +13,12 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
+class UpdateMhsViewModel(
+    savedStateHandle: SavedStateHandle,
+    private val repositoryMhs: RepositoryMhs
+) : ViewModel() {
+
+}
 
 fun Mahasiswa.toUIStateMhs() : MhsUIState = MhsUIState (
     mahasiswaEvent = this.toDetailUiEvent(),
