@@ -1,4 +1,4 @@
-Tampilan awal detail mahasiswa
+Tampilan awal daftar mahasiswa
 
 ![image](https://github.com/user-attachments/assets/5cf049d2-5acd-43c0-bf1e-6fc2e74ab61b)
 
