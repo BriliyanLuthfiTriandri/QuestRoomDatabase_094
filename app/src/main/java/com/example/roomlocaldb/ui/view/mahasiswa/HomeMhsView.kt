@@ -44,6 +44,28 @@ import kotlinx.coroutines.launch
 
 
 
+
+@Composable
+fun ListMahasiswa(
+    listMhs: List<Mahasiswa>,
+    modifier: Modifier = Modifier,
+    onClick: (String) -> Unit = { }
+) {
+    LazyColumn (
+        modifier = modifier
+    ) {
+        items(
+            items = listMhs,
+            itemContent = { mhs ->
+                CardMhs(
+                    mhs = mhs,
+                    onClick = { onClick(mhs.nim) }
+                )
+            }
+        )
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CardMhs(
