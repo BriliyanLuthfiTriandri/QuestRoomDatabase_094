@@ -43,7 +43,27 @@ import com.example.roomlocaldb.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
 
 
+@Composable
+fun BodyHomeMhsView (
+    homeUiState: HomeUiState,
+    onClick: (String) -> Unit = { },
+    modifier: Modifier = Modifier
+) {
 
+    val coroutineScope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+    when {
+        homeUiState.isLoading -> {
+            //menampilkan indikator loading
+            Box(
+                modifier = modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        }
+    }
+}
 
 @Composable
 fun ListMahasiswa(
