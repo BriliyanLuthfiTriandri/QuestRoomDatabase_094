@@ -16,6 +16,15 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
+class DetailMhsViewModel(
+    savedStateHandle: SavedStateHandle,
+    private val repositoryMhs: RepositoryMhs,
+) : ViewModel() {
+    private val _nim: String = checkNotNull(savedStateHandle[DestinasiDetail.NIM])
+
+    }
+
+
 data class DetailUiState(
     val detailUiEvent: MahasiswaEvent = MahasiswaEvent(),
     val isLoading: Boolean = false,
