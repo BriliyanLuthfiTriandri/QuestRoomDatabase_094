@@ -55,13 +55,25 @@ fun BodyHomeMhsView (
     when {
         homeUiState.isLoading -> {
             //menampilkan indikator loading
-            Box(
+            Box (
                 modifier = modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
                 CircularProgressIndicator()
             }
         }
+
+        homeUiState.isError -> {
+            //menampilkan pesan error
+            LaunchedEffect(homeUiState.errorMessage) {
+                homeUiState.errorMessage?.let{ message ->
+                    coroutineScope.launch {
+                        snackbarHostState.showSnackbar(message) //show snackbar
+                    }
+                }
+            }
+        }
+
     }
 }
 
